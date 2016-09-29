@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-ruby "2.2.2"
+# ruby "2.2.2"
 gem 'rails', '4.2.4'
 gem 'pg', '~> 0.18.2'
 gem 'puma', '~> 2.13.4'
@@ -39,6 +39,7 @@ group :development do
   gem 'quiet_assets', '~> 1.1.0'
   gem 'guard-minitest', '~> 2.4.4'
   gem 'guard', '~> 2.13.0'
+  gem 'sqlite3'
 end
 
 group :development, :test do

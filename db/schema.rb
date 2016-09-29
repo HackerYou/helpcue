@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150329165511) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "classrooms", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -57,8 +54,8 @@ ActiveRecord::Schema.define(version: 20150329165511) do
     t.string  "hashtaggable_type"
   end
 
-  add_index "simple_hashtag_hashtaggings", ["hashtag_id"], name: "index_simple_hashtag_hashtaggings_on_hashtag_id", using: :btree
-  add_index "simple_hashtag_hashtaggings", ["hashtaggable_id", "hashtaggable_type"], name: "index_hashtaggings_hashtaggable_id_hashtaggable_type", using: :btree
+  add_index "simple_hashtag_hashtaggings", ["hashtag_id"], name: "index_simple_hashtag_hashtaggings_on_hashtag_id"
+  add_index "simple_hashtag_hashtaggings", ["hashtaggable_id", "hashtaggable_type"], name: "index_hashtaggings_hashtaggable_id_hashtaggable_type"
 
   create_table "simple_hashtag_hashtags", force: :cascade do |t|
     t.string   "name"
@@ -66,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150329165511) do
     t.datetime "updated_at"
   end
 
-  add_index "simple_hashtag_hashtags", ["name"], name: "index_simple_hashtag_hashtags_on_name", using: :btree
+  add_index "simple_hashtag_hashtags", ["name"], name: "index_simple_hashtag_hashtags_on_name"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -88,7 +85,7 @@ ActiveRecord::Schema.define(version: 20150329165511) do
     t.string   "uid"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

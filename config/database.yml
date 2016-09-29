@@ -15,12 +15,12 @@
 # gem 'pg'
 #
 development:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
-  database: helpcue_development
+  database: db/development.sqlite3
   pool: 5
-  username: <%= ENV['USER'] %>
-  password:
+  # username: <%= ENV['USER'] %>
+  # password:
 
 test:
   adapter: postgresql
